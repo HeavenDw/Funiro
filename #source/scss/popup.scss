@@ -1,0 +1,76 @@
+// <a href="#popup" class="popup-link"></a>
+// ссылка при клике на которую открывается попап с id в href 
+
+// сам попап
+// <div id="popup" class="popup">
+//    <div class="popup__body">
+//        <div class="popup__content">
+//            <a href="#header" class="popup__close close-popup">X</a>
+//            <div class="popup__title">Это модальное окно №1</div>
+//        </div>
+//    </div>
+// </div>
+// popul-link открывает попап с id в href
+// close-popup закрывает попап
+
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all 0.3s ease 0s;
+	// .popup.open
+	&.open {
+		opacity: 1;
+		visibility: visible;
+	}
+	// .popup.open__content
+	&.open .popup__content {
+	transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+	opacity: 1;
+	}
+	// .popup__body
+	&__body {
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 30px 10px;
+		transition: all 0.3s ease 0s;
+	}
+	// .popup__content
+	&__content {
+		background-color: #fff;
+		color: #000;
+		max-width: 800px;
+		padding: 30px;
+		position: relative;
+		transition: all 0.3s ease 0s;
+		opacity: 0;
+		transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+	}
+	// .popup__close
+	&__close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		font-size: 20px;
+		color: #000;
+		text-decoration: none;
+	}
+	// .popup__title
+	&__title {}
+	// .popup__text
+	&__text {}
+	// .popup__image
+	&__image img {
+		max-width: 100%;
+		vertical-align: top;
+	}
+}

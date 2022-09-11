@@ -1,0 +1,51 @@
+p: {padding: 0px 0px 0px 0px};
+pp: {padding: 0px ${0}};
+pt: {padding: ${0} 0px 0px 0px};
+pb: {padding: 0px 0px ${0} 0px};
+pl: {padding: 0px 0px 0px ${0}};
+pr: {padding: 0px ${0} 0px 0px};
+m: {margin: 0px 0px 0px 0px};
+mm: {margin: 0px ${0}};
+mt: {margin: ${0} 0px 0px 0px;}
+mb: {margin: 0px 0px ${0} 0px;}
+ml: {margin: 0px 0px 0px ${0}};
+mr: {margin: 0px ${0} 0px 0px};
+ma: {margin: 0px auto};
+ffo: {font-family:'Open Sans'};
+pa: {position: absolute; width: 100%; height: 100%; top: 0; left: 0;};
+art: {width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 100px solid red;};
+arb: {width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-top: 100px solid red;};
+arl: {width: 0; height: 0; border-top: 50px solid transparent; border-right: 100px solid red; border-bottom: 50px solid transparent;};
+arr: {width: 0; height: 0; border-top: 50px solid transparent; border-left: 100px solid red; border-bottom: 50px solid transparent;};
+br: {border-radius: 50%};
+bo: {border: 1px solid #000};
+bs: {box-shadow: 0 0 5px rgba(0 0 0 0.3);};
+bgco:background-color: {rgba(0000.5);};
+cb:color: {#000};
+cw:color: {#fff};
+ia: {@include anim(0.3s0s)};
+ir: {@include rotate(-${1:180}deg)};
+is: {@include scale(${1:1})};
+it: {@include tr(0px0px0px)};
+img: {img{\n\tmax-width: 100%;\n}}
+lc: {&:last-child {\n\t${0}\n}}
+fc: {&:first-child {\n\t${0}\n}}
+nc: {&:nth-child(${0}) {}}
+af: {&:after {\n\tcontent:'';\n\t${0}\n}}
+bf: {&:before {\n\tcontent:'';\n\t${0}\n}}
+hv: {&:hover {\n\t${0}\n}}
+ac: {&.active {\n\t${0}\n}}
+bgs: {background: url('../../img/${0}') 0 0 no-repeat};
+md: {@media (max-width:${0}px){\n\t\n}}
+mdo: {@media (max-width:\\$md1+px){\n\t${0}\n}}
+mdt: {@media (max-width:\\$md2+px){\n\t${0}\n}}
+mdth: {@media (max-width:\\$md3+px){\n\t${0}\n}}
+mdf: {@media (max-width:\\$md4+px){\n\t${0}\n}}
+mdh: {@media screen and (max-width: \\$md2+px)  screen and (max-height: 700px) {\n\t${0}\n}}
+df: {@include flexbox()};
+fo: {@include flexorder(${0})};
+dff: {@include flexbox(); justify-content:${1:space-between}; align-items:center;\n};
+fww: {flex-wrap: wrap};
+fdc: {flex-direction: column};
+flex: {flex: 0 0 ${0}};
+inp: input[autocomplete=\off\ type=\text\ name=\form[]\ data-value=\\ class=\input\]

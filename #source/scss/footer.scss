@@ -1,0 +1,167 @@
+.footer {
+    // .footer__container
+    &__container {}
+    // .footer__body
+    &__body {
+        border-top: 1px solid #D8D8D8;
+        display: grid;
+        grid-template-columns: 250px 1fr 290px;
+        @include adaptive-value("padding-top", 80, 30, 1);
+        @include adaptive-value("padding-bottom", 60, 30, 1);
+        @include adaptive-value("column-gap", 80, 0, 1);
+        @media (max-width:$md1+px){
+            grid-template-columns: 1fr 290px;
+            grid-template-rows: auto auto;
+        }
+        @media (max-width:$md2+px){
+            display: block;
+        }
+    }
+    // .footer__main
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        @media (max-width:$md1+px){
+            grid-column: span 2;
+            @include adaptive-value("margin-bottom", 40, 30, 1);
+        }
+    }
+    // .footer__logo
+    &__logo {
+        margin: 0px 0px 16px 0px;
+    }
+    // .footer__text
+    &__text {
+        margin: 0px 0px 16px 0px;
+        line-height: 24 / 16 * 100%;
+    }
+    // .footer__contacts
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+    }
+    // .footer__menu
+    &__menu {
+        display: flex;
+        @media (max-width:$md2+px){
+            display: block;
+            @include adaptive-value("margin-bottom", 40, 30, 1);
+        }
+    }
+    // .footer__subscribe
+    &__subscribe {}
+}
+
+.contacts-footer {
+    // .contacts-footer__item
+    &__item {
+        margin: 0px 0px 16px 0px;
+        color: $darkGray;
+        transition: all 0.3s ease 0s;
+        &::before{
+            margin: 0px 8px 0px 0px;
+        }
+        @media (any-hover: hover){
+            &:hover {
+                color: $orange
+            }
+        }
+    }
+}
+.menu-footer {
+    // .menu-footer__column
+    &__column {
+        flex: 0 1 33.333%;
+        align-items: flex-start;
+        @media (max-width:$md3+px){
+            @include adaptive-value("margin-bottom", 30, 15, 1);
+        }
+    }
+    // .menu-footer__title
+    &__title {
+        margin: 0px 0px 16px 0px;
+        cursor: default;
+        &::before{
+            display: none;
+            @media (max-width:$md3+px){
+                display: inline-block;
+                font-size: 15px;
+                margin: 0px 10px 0px 0px;
+                transition: all 0.3s ease 0s;
+            }
+        }
+        @media (max-width: md3+px){
+            display: flex;
+            justify-content:space-between;
+            flex-flow: row-reverse;
+            width: 100%;
+            &._active {
+                &::before{
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+    // .menu-footer__list
+    &__list {
+        li:not(:last-child) {
+            margin: 0px 0px 16px 0px;
+        }
+        li {
+            @media (any-hover: hover){
+                &:hover {
+                    a {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+    }
+    // .menu-footer__link
+    &__link {
+        color: $darkGray;
+        font-weight: 500;
+        transition: all 0.3s ease 0s;
+    }
+}
+.subscribe-footer {
+    // .subscribe-footer__title
+    &__title {
+        margin: 0px 0px 16px 0px;
+    }
+    // .subscribe-footer__form
+    &__form {
+        display: flex;
+        input {
+            padding: 0px 12px;
+            background-color: #F4F5F7;
+            color: #828282;
+            line-height: 24 / 16 * 100%;
+            width: 100%;
+        }
+        &._disabled {
+            .subscribe-footer__btn {
+                background-color: rgb(22, 167, 22);
+            }
+        }
+    }
+    // .subscribe-footer__btn
+    &__btn {
+        flex: 0 0 45px;
+        height: 45px;
+        background-color: $orange;
+        color: $white;
+        font-size: 18px;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        transition: all 0.3s ease 0s;
+        margin: 0px 0px 0px 4px;
+        @media (any-hover: hover){
+            &:hover {
+                background-color: #b3551b;;
+            }
+        }
+    }
+}
