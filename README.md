@@ -1,5 +1,5 @@
 # Funiro
-<b>https://heavendw.ru/Funiro/ - live demo</b>
+<b>https://heavendw.ru/funiro/ - live demo</b>
 <ul>
 <li>Adaptive online store</li>
 <li>HTML5</li>
